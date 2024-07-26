@@ -1,8 +1,9 @@
 pipeline {
     agent any
-    tools {
+  /*  tools {
   maven 'Maven 3.8.6'
 }
+*/
 environment {
   buildNumber = "BUILD_NUMBER"
 }
@@ -10,7 +11,7 @@ environment {
     stages {
         stage('Git_Clone') {
             steps {
-                git branch: 'qa', credentialsId: 'GITHUB_CREDENTIALS_1', url: 'https://github.com/quadrimuzammil/maven-web-application.git'
+                git credentialsId: 'Github_Id', url: 'https://github.com/Muzammil-2/simple-java-project.git'
             }
         }
     }
