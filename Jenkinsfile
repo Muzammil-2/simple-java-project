@@ -1,9 +1,9 @@
 pipeline {
     agent any
-  /*  tools {
+    tools {
   maven 'Maven 3.8.6'
 }
-*/
+
 environment {
   buildNumber = "BUILD_NUMBER"
 }
@@ -14,5 +14,14 @@ environment {
                 git credentialsId: 'Github_Id', url: 'https://github.com/Muzammil-2/simple-java-project.git'
             }
         }
+
+         stage('Build_Codes') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+    
+    
+    
     }
 }   
